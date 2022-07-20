@@ -1,0 +1,126 @@
+html,
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    margin: 34px 0;
+    font-weight: normal;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    font-size: medium;
+}
+
+/* Список дел */
+.todo-list {
+    width: 470px;
+    float: left;
+}
+
+.list {
+    padding: 0;
+    position: relative;
+}
+
+.todo_li {
+    height: 135px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    list-style-type: none;
+}
+
+.todo_li-text {
+    position: absolute;
+    color: black;
+    margin: 20px 25px 20px 20px;
+    font-size: 16px;
+}
+
+hr {
+    margin-top: 30px;
+    width: 430px;
+    color: #f7f7f74f;
+}
+
+.todo_li-collapse {
+    position: relative;
+    top: 17px;
+    right: 50px;
+    float: right;
+    cursor: pointer;
+}
+
+.collapsed {
+    transform: rotate(90deg);
+}
+
+.todo_li-remove {
+    position: relative;
+    top: 17px;
+    right: 10px;
+    float: right;
+    cursor: pointer;
+}
+
+.todo_li-description {
+    position: absolute;
+    color: darkgray;
+    font-size: 16px;
+    margin: 5px 20px 10px 20px;
+}
+
+/*Добвление нового эдемента списка*/
+.list-item {
+    width: 470px;
+    float: right;
+}
+
+.item {
+    background-color: white;
+    height: 540px;
+    border-radius: 10px;
+    color: darkgray;
+}
+
+.item-name,
+.item-description {
+    padding: 35px 40px 0 40px;
+}
+
+input {
+    background-color: #f2f2f2;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    margin-top: 5px;
+    height: 43px;
+    width: 380px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#description {
+    height: 230px;
+    width: 370px;
+    background-color: #f2f2f2;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+}
+
+.add-item {
+    margin: 30px 0 0 40px;
+    color: white;
+    background-color: blue;
+    padding: 19px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

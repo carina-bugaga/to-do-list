@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Список дел</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="todo-list">
+            <h2>Список дел:</h2>
+            <ul class="list">
+                <p>Список дел пуст...</p>
+            </ul>
+        </section>
+
+        <section class="list-item">
+            <h2>Добавить новое дело</h2>
+            <form class="item">
+                <div class="item-name">
+                    <label for="name">* Название</label>
+                    <input type="text" maxlength="35" id="name">
+                </div>
+
+                <div class="item-description">
+                    <label for="description">* Описание</label>
+                    <textarea type="text" id="description"></textarea>
+                </div>
+
+                <button class="add-item">Добавить дело</button>
+            </form>
+
+        </section>
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
