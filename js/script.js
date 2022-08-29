@@ -1,25 +1,31 @@
 $(function () {
+    $(document).ready(function loadToDos() {
+        const todos = {... localStorage};
+        if (todos) {
+            for (const key in todos) {
+                addNewToDo(key, todos[key]);
+            }
+        }
+    });
+    
     $('.add-item')
         .click(function () {
             let nameEl = $('#name')[0].value;
             let descriptionEl = $('#description')[0].value;
-
-            let newElement = $(
-                '<li class="todo_li">' +
-                '<span class="todo_li-text">' + nameEl + '</span>' +
-                '<span class="todo_li-collapse">&#9660;</span>' +
-                '<span class="todo_li-remove">&#10006;</span>' + '</br>' + '<hr>' +
-                '<span class="todo_li-description">' + descriptionEl + '</span>' +
-                '</li>');
-            $('.todo-list p').remove();
-            $('.list').append(newElement);
+            if (nameEl.length == 0) {
+                return false;     
+            }
+            addNewToDo(nameEl, descriptionEl);
             $('#name')[0].value = '';
             $('#description')[0].value = '';
+            saveToStorage(nameEl, descriptionEl);
             return false;
         });
 
     $('ul').on('click', '.todo_li-remove', function () {
+        const deleteKey = $(this).siblings('.todo_li-text')[0].innerText;
         $(this).closest('.todo_li').remove();
+        removeFromStorage(deleteKey);
         if ($('ul li').length == 0) {
             $('ul').append('<p>Список дел пуст...</p>');
         }
@@ -37,3 +43,23 @@ $(function () {
     });
 
 });
+
+function addNewToDo (name, description) {
+    let element = $(
+        '<li class="todo_li">' +
+        '<span class="todo_li-text">' + name + '</span>' +
+        '<span class="todo_li-collapse">&#9660;</span>' +
+        '<span class="todo_li-remove">&#10006;</span>' + '</br>' + '<hr>' +
+        '<span class="todo_li-description">' + description + '</span>' +
+        '</li>');
+    $('.todo-list p').remove();
+    $('.list').append(element);
+};
+
+function saveToStorage (key, value) {
+    localStorage.setItem(key, value);
+};
+
+function removeFromStorage (key) {
+    localStorage.removeItem(key);
+};
