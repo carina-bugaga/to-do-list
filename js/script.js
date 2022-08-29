@@ -7,7 +7,7 @@ $(function () {
             let newElement = $(
                 '<li class="todo_li">' +
                 '<span class="todo_li-text">' + nameEl + '</span>' +
-                '<span class="todo_li-collapse">&#11167;</span>' +
+                '<span class="todo_li-collapse">&#9660;</span>' +
                 '<span class="todo_li-remove">&#10006;</span>' + '</br>' + '<hr>' +
                 '<span class="todo_li-description">' + descriptionEl + '</span>' +
                 '</li>');
